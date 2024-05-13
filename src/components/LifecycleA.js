@@ -1,35 +1,54 @@
-import React, { Component } from 'react'
-import LifecycleB from './LifecycleB'
+import React, { Component } from "react";
+import LifecycleB from "./LifecycleB";
 
- class LifecycleA extends Component {
- constructor(props) {
-   super(props)
- 
-   this.state = {
-      name:'wish wash'
-   }
-   console.log("Lifecycle A constructor")
- }
- static getDerivedStateFromProps(props,state){
-    console.log("Lifecyle A getDerivedStateFromProps")
-    return null
- }
+class LifecycleA extends Component {
+  constructor(props) {
+    super(props);
 
- componentDidMount(){
-    console.log('Lifecycle A componentDIdMount')
- }
+    this.state = {
+      name: "wish wash",
+    };
+    console.log("Lifecycle A constructor");
+  }
+  static getDerivedStateFromProps(props, state) {
+    console.log("Lifecyle A getDerivedStateFromProps");
+    return null;
+  }
 
+  componentDidMount() {
+    console.log("Lifecycle A componentDIdMount");
+  }
 
+  shouldComponentUpdate() {
+    console.log("LifecycleA shoudl Component Update");
+    return true;
+  }
 
-    render() {
-        console.log('Lifecyle A render')
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log("LifecycleA get getSnapshotBefore Update");
+    return null;
+  }
+
+  componentDidUpdate() {
+    console.log("Lifecycle componentDidUpdate");
+  }
+
+  chageState = () => {
+    this.setState({
+      name: "codevolution",
+    });
+  };
+
+  render() {
+    console.log("Lifecyle A render");
     return (
       <div>
         <div>LifecycleA</div>
-        <LifecycleB/>
+        <button onClick={this.chageState}>Change State</button>
+        <LifecycleB />
       </div>
-    )
+    );
   }
 }
 
-export default LifecycleA
+export default LifecycleA;
