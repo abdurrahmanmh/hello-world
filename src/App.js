@@ -17,11 +17,12 @@ import styles from "./appStyles.module.css";
 import Form from './components/Form'
 import LifecycleA from './components/LifecycleA';
 
+
 function App() {
-  return (
+  return 
     <div className="App">
       <LifecycleA/>
-
+      
       <Form/>
 
       <h1 className='error'>Error</h1>
