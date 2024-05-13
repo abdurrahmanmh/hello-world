@@ -19,7 +19,7 @@ import LifecycleA from './components/LifecycleA';
 
 
 function App() {
-  return 
+  return (
     <div className="App">
       <LifecycleA/>
       
@@ -49,7 +49,7 @@ function App() {
       <Welcome name ='Yuji 2' quirks='Speed'/>
       <Hello></Hello>
     </div>
-  );
+  )
 }
 
 export default App;
