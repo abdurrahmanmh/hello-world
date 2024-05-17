@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <HoverCounter/>
-      <ClickCounter/>
+      <ClickCounter name='March'/>
 
       {/* <ErrorBoundary>
       <Hero heroName="Balls" />

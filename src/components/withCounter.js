@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const withCounter = (WrappedComponent) => {
+const withCounter = (WrappedComponent, incrementNumber) => {
   class WithCounter extends React.Component {
     constructor(props) {
       super(props);
@@ -12,16 +12,19 @@ const withCounter = (WrappedComponent) => {
     }
     incrementCount = () => {
       this.setState((prevState) => {
-        return { count: prevState.count + 1 };
+        return { count: prevState.count + incrementNumber };
       });
     };
 
     render() {
+        console.log(this.props.name)
       return (
         <WrappedComponent
-          name="wish wash"
+          //name="wish wash"
           count={this.state.count}
           incrementCount={this.incrementCount}
+          //pass other props
+          {... this.props}
         />
       );
     }
