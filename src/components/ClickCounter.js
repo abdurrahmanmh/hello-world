@@ -17,6 +17,7 @@ import withCounter from "./withCounter";
     // }
 
   render() {
+    console.log(this.props.name)
     //const {count}=this.state
     const {count,incrementCount}=this.props
     return (
@@ -29,4 +30,4 @@ import withCounter from "./withCounter";
   }
 }
 
-export default withCounter(ClickCounter);
+export default withCounter(ClickCounter, 5);
