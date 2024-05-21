@@ -32,10 +32,16 @@ import ClickCounterTwo from "./components/ClickCounterTwo";
 import HoverCounterTwo from "./components/HoverCounterTwo";
 import User from "./components/User";
 import Counter2 from "./components/Counter2";
+import ComponentC from "./components/ComponentC";
+import { UserProvider } from "./components/userContext";
 
 function App() {
   return (
     <div className="App">
+      <UserProvider value='Wish Wash'>
+        <ComponentC />
+      </UserProvider>
+
       <Counter2
         render={(count, incrementCount) => (
           <ClickCounterTwo
@@ -52,7 +58,6 @@ function App() {
           ></HoverCounterTwo>
         )}
       />
-      
 
       {/* prop render value function */}
       {/* <User render = {(isLoggedIn)=>isLoggedIn ?'wish wash':"Guest"}></User>
